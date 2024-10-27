@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIREPHO INSTALLER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        // best seen at 1500px or less
+
+html, body { height: 100%; }
+body {
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  overflow: hidden;
+}
+
+.ocean { 
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+    </style>
+</head>
+<body class="justify-content-center align-item-center" >
+    <div class="title text-center" style="margin-top: 200px;">
+        <h1 >SIREPHO INSTALLER 1.0 ver</h1>
+        <p><i>Aplikasi manajemen resepsionis berbasis java</i></p>
+    </div>
+    <div  class="text-center container d-flex justify-content-center align-item-center m-4 gap-3">
+        <button style="margin-left: 80px;font-size: larger;" class="btn btn-primary">
+           Unduh SIREPHO
+        </button>
+        <a target="_blank" href="https://www.java.com/en/download/">
+        <button style="font-size: larger;" class="btn btn-success">
+           Unduh JRE
+        </button>
+        </a>
+        <a  target="_blank" href="https://www.oracle.com/id/java/technologies/downloads/">
+            <button style="font-size: larger;"  class="btn btn-success">
+               Unduh JDK
+            </button>
+        </a>
+          <button style="font-size: larger;" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#instructionModal">
+                Instruksi
+            </button>
+    </div>
+      <!-- Modal for Instructions -->
+  <div class="modal fade" id="instructionModal" tabindex="-1" aria-labelledby="instructionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="instructionModalLabel">Instruksi Instalasi SIREPHO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li><strong>Persiapan Lingkungan</strong>
+              <p>Pastikan Anda memiliki <strong>Java Runtime Environment (JRE)</strong> atau <strong>Java Development Kit (JDK)</strong> yang dibutuhkan untuk menjalankan aplikasi</p>
+            </li>
+            <li><strong>Unduh Aplikasi SIREPHO</strong>
+              <p>Klik tombol <strong>"Unduh SIREPHO"</strong> untuk mengunduh file aplikasi. Simpan file di lokasi yang mudah diakses.</p>
+            </li>
+            <li><strong>Instalasi dan Pengaturan</strong>
+              <p>Periksa apakah JRE atau JDK sudah terinstal dengan menjalankan perintah <code>java -version</code> di command prompt atau terminal.</p>
+            </li>
+            <li><strong>Menjalankan Aplikasi</strong>
+              <p>Buka folder yang telah kamu unduh dari web, lalu jalankan file dengan extension exe dibawah:</p>
+              <figure>
+                <img src="gambar1.png" width="300" alt="">
+              </figure>
+            </li>
+            
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
